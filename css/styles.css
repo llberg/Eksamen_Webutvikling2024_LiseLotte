@@ -1,29 +1,38 @@
 /* header global */
-
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    max-width: none;
+    width: 100%;
+}
 body {
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    max-width: 481px;
-    overflow-x: hidden;
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+    overflow-x: hidden !important;
     padding: 0;
+    margin: 0;
+    max-width: 100%;
+    min-width: 0;
 }
 
 header, main, footer{
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    min-width: 0px;
 }
 
 .grid{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "header" "main" "footer";
-    margin: 0 auto;
-    max-width: 95%;
+    margin: 2rem 1rem;
+    max-width: 1200px;
 }
 
 header{
@@ -49,17 +58,17 @@ footer{
     justify-content: space-between;
     align-items: start;
     min-width: 100%;
-    flex-grow: 1;
-    padding-left: 10px;
+    flex-shrink: 1;
 }
 
 #list-header {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 1rem;
+    gap: 20px;
     list-style: none;
     padding: 0;
+    margin: 20px 0px;
 }
 
 #list-header li {
@@ -78,9 +87,10 @@ footer{
     border-width: 1px;
     border-color: grey;
     width: 11rem;
-    height: 1.2rem;
+    height: 20px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 3px 7px;
     justify-content: space-between;
 }
@@ -92,6 +102,9 @@ footer{
     flex-direction: column;
     border-top-style: solid;
     border-width: 1px;
+}
+#footer p {
+    max-width: 60%;
 }
 #footer section{
     margin-top: 20px;
@@ -155,7 +168,7 @@ h4{
 
 
 #scroll-container{
-    max-width: 90%;
+    max-width: 100%;
     background-color: transparent;
     overflow: auto;
     white-space: nowrap;
@@ -176,7 +189,7 @@ h4{
     position: absolute;
     max-width: 60%;
     right: 3rem;
-    top: 35rem;
+    top: 26rem;
     z-index: 1;
 }
 #text-bilder-index h1, #pp{
@@ -317,6 +330,10 @@ h4{
     align-items: start;
     margin: 1rem 0;
     gap: 10px;
+}
+
+#anmeldelser p{
+    max-width: 70%;
 }
 
 #anmeldelse{
@@ -498,22 +515,19 @@ input[type="checkbox"]{
 
 
 
-@media (min-width: 600px) {
+@media (min-width: 481px) {
     body {
       font-size: 18px;
       max-width: 100%;
     }
     
-    header, footer, main {
-        margin: 0 5rem;
-    }
+
     header{
         grid-column-start: 1;
         grid-column-end: 4;
         grid-row-start: 1;
         grid-row-end: 2;
     }
-    
     
     
     main {
@@ -526,7 +540,6 @@ input[type="checkbox"]{
     }
     
     
-    
     footer{
         grid-column-start: 1;
         grid-column-end: 4;
@@ -535,10 +548,21 @@ input[type="checkbox"]{
     }
 
     .grid {
+        max-width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "header" "header" "header" "main""main""main" "footer" "footer" "footer";
-        max-width: 100%;
+    }
+
+    #search-div{
+        width: 170px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    a{
+        font-size: 0.9em;
     }
 
     #nav-header {
@@ -562,7 +586,7 @@ input[type="checkbox"]{
 
     #text-bilder-index{
         top: 20rem;
-        right: 8rem
+        right: 2rem;
     }
 
     #text-pop-items p {
